@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Degan Ori — Kesegaran Asli Kelapa</title>
+<meta name="description" content="Degan Ori, kelapa muda asli tanpa gula buatan. Pesan langsung via WhatsApp, khusus Jombang.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pink-hot:#EC1E79;
+    --pink-deep:#A50E52;
+    --pink-line:#FF4E9A;
+    --cream:#FFF7EC;
+    --lime:#79C242;
+    --lime-dark:#4C8A1E;
+    --yellow:#FFC61E;
+    --ink:#2B1220;
+    --white:#FFFFFF;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Plus Jakarta Sans',sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.display{
+    font-family:'Baloo 2',cursive;
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+  ul{list-style:none;}
+  .wrap{
+    max-width:1100px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  /* ===== NAV ===== */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:var(--cream);
+    border-bottom:3px solid var(--ink);
+  }
+  .nav-inner{
+    max-width:1100px;margin:0 auto;padding:14px 24px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .brand{
+    display:flex;align-items:center;gap:10px;
+    font-family:'Baloo 2',cursive;
+    font-weight:800;font-size:1.4rem;
+    color:var(--pink-hot);
+  }
+  /* LOGO: ganti src gambar di tag <img class="brand-mark-img"> pada HTML di bawah */
+  .brand-mark{
+    width:38px;height:38px;border-radius:50%;
+    background:var(--lime);
+    display:flex;align-items:center;justify-content:center;
+    font-size:1.2rem;
+    border:2px solid var(--ink);
+    overflow:hidden;
+  }
+  .brand-mark img{
+    width:100%;height:100%;
+    object-fit:cover;
+    border-radius:50%;
+  }
+  .nav-cta{
+    background:var(--ink);color:var(--cream);
+    font-weight:700;font-size:.9rem;
+    padding:10px 18px;border-radius:30px;
+    white-space:nowrap;
+  }
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;
+    padding:56px 0 20px;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;top:-120px;right:-120px;
+    width:340px;height:340px;border-radius:50%;
+    background:var(--yellow);
+    opacity:.55;
+  }
+  .hero-inner{
+    position:relative;z-index:2;
+    display:grid;grid-template-columns:1.1fr .9fr;gap:40px;
+    align-items:center;
+  }
+  .eyebrow{
+    display:inline-block;
+    background:var(--ink);color:var(--yellow);
+    font-weight:700;font-size:.78rem;letter-spacing:.03em;
+    padding:6px 14px;border-radius:20px;
+    margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:3.1rem;line-height:1.05;
+    color:var(--pink-hot);
+    -webkit-text-stroke:2px var(--ink);
+    font-weight:800;
+    margin-bottom:16px;
+  }
+  .hero h1 span{color:var(--ink);-webkit-text-stroke:0;}
+  .hero p{
+    font-size:1.08rem;line-height:1.55;
+    max-width:440px;margin-bottom:26px;
+    color:#4a2436;
+  }
+  .btn-row{display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    font-weight:700;font-size:1rem;
+    padding:14px 26px;border-radius:40px;
+    border:3px solid var(--ink);
+    transition:transform .15s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{
+    background:var(--lime);color:var(--ink);
+    box-shadow:4px 4px 0 var(--ink);
+  }
+  .btn-secondary{
+    background:transparent;color:var(--ink);
+  }
+  .hero-badges{
+    display:flex;gap:10px;margin-top:28px;flex-wrap:wrap;
+  }
+  .badge-pill{
+    background:var(--white);border:2px solid var(--ink);
+    border-radius:20px;padding:6px 14px;
+    font-size:.82rem;font-weight:700;
+    display:flex;align-items:center;gap:6px;
+  }
+
+  .hero-art{
+    position:relative;
+    display:flex;align-items:center;justify-content:center;
+  }
+  /* GAMBAR KELAPA: ganti src gambar di tag <img class="coconut-img"> pada HTML di bawah */
+  .coconut-plate{
+    width:100%;max-width:380px;aspect-ratio:1;
+    border-radius:50%;
+    background:conic-gradient(from 180deg, var(--pink-hot), var(--pink-deep) 55%, var(--pink-hot));
+    border:8px solid var(--white);
+    box-shadow:0 0 0 4px var(--ink), 10px 14px 0 var(--ink);
+    display:flex;align-items:center;justify-content:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .coconut-img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    border-radius:50%;
+  }
+  .float-chip{
+    position:absolute;
+    background:var(--yellow);
+    border:3px solid var(--ink);
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-size:1.6rem;
+  }
+  .chip1{width:70px;height:70px;top:-10px;left:-10px;background:var(--lime);}
+  .chip2{width:56px;height:56px;bottom:10px;right:-14px;}
+  .chip3{width:44px;height:44px;top:40%;right:-30px;background:var(--white);}
+
+  /* wave divider */
+  .wave{
+    display:block;width:100%;line-height:0;
+    margin-top:34px;position:relative;z-index:3;
+  }
+
+  /* ===== KEUNGGULAN STRIP ===== */
+  .strip{
+    background:var(--ink);color:var(--cream);
+    padding:18px 0;
+  }
+  .strip-inner{
+    max-width:1100px;margin:0 auto;padding:0 24px;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;
+  }
+  .strip-item{
+    display:flex;align-items:center;gap:10px;
+    font-weight:700;font-size:.95rem;
+  }
+  .strip-item .ic{font-size:1.3rem;}
+
+  /* ===== MENU ===== */
+  .section{padding:70px 0;}
+  .section-head{
+    text-align:center;max-width:560px;margin:0 auto 20px;
+  }
+  .section-head .eyebrow{background:var(--pink-hot);color:var(--white);}
+  .section-head h2{
+    font-size:2.3rem;color:var(--ink);
+    margin-bottom:10px;
+  }
+  .section-head p{color:#6b4457;font-size:1rem;}
+
+  .menu-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:22px;
+  }
+  .menu-card{
+    background:var(--white);
+    border:3px solid var(--ink);
+    border-radius:22px;
+    padding:26px 20px 24px;
+    box-shadow:6px 6px 0 var(--ink);
+    transition:transform .18s ease, box-shadow .18s ease;
+    display:flex;flex-direction:column;
+    cursor:pointer;
+  }
+  .menu-card:hover{
+    transform:translate(-3px,-3px);
+    box-shadow:9px 9px 0 var(--ink);
+  }
+  .menu-hint{
+    text-align:center;
+    font-size:1.15rem;
+    font-weight:700;
+    color:var(--lime-dark);
+    margin-bottom:28px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+  }
+  .menu-icon{
+    width:64px;height:64px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-size:2rem;margin-bottom:16px;
+    border:3px solid var(--ink);
+    overflow:hidden;
+  }
+  .menu-icon img{
+    width:100%;height:100%;
+    object-fit:cover;
+    object-position:center;
+  }
+  .menu-card:nth-child(1) .menu-icon{background:var(--lime);}
+  .menu-card:nth-child(2) .menu-icon{background:var(--yellow);}
+  .menu-card:nth-child(3) .menu-icon{background:#FF9FC8;}
+  .menu-card:nth-child(4) .menu-icon{background:#B9F0D6;}
+  .menu-card h3{font-size:1.25rem;margin-bottom:8px;color:var(--pink-deep);}
+  .menu-card p{font-size:.9rem;line-height:1.5;color:#5a3948;flex-grow:1;}
+  .menu-tag{
+    margin-top:14px;font-size:.75rem;font-weight:700;
+    color:var(--lime-dark);
+    display:inline-flex;align-items:center;gap:5px;
+  }
+
+  /* ===== TESTIMONI ===== */
+  .testi-section{
+    background:linear-gradient(180deg,var(--pink-hot),var(--pink-deep));
+    color:var(--white);
+    position:relative;
+    padding:70px 0 90px;
+  }
+  .testi-section .section-head .eyebrow{background:var(--yellow);color:var(--ink);}
+  .testi-section .section-head h2{color:var(--white);}
+  .testi-section .section-head p{color:#ffd6e8;}
+
+  .testi-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+  }
+  .testi-card{
+    background:var(--white);color:var(--ink);
+    border-radius:20px 20px 20px 4px;
+    padding:22px;
+    position:relative;
+    box-shadow:5px 5px 0 rgba(0,0,0,.25);
+  }
+  .stars{color:var(--yellow);font-size:1rem;margin-bottom:10px;letter-spacing:2px;}
+  .testi-text{font-size:.92rem;line-height:1.55;margin-bottom:16px;color:#3a2230;}
+  .testi-person{
+    display:flex;align-items:center;gap:10px;
+  }
+  .testi-avatar{
+    width:38px;height:38px;border-radius:50%;
+    background:var(--lime);
+    display:flex;align-items:center;justify-content:center;
+    font-weight:800;color:var(--ink);font-size:.95rem;
+    border:2px solid var(--ink);
+  }
+  .testi-name{font-weight:700;font-size:.88rem;}
+  .testi-loc{font-size:.76rem;color:#8a6270;}
+
+  /* ===== CTA / LOKASI ===== */
+  .cta-section{
+    padding:70px 0;
+    text-align:center;
+  }
+  .cta-box{
+    background:var(--yellow);
+    border:3px solid var(--ink);
+    border-radius:28px;
+    padding:50px 30px;
+    box-shadow:8px 8px 0 var(--ink);
+    max-width:720px;margin:0 auto;
+  }
+  .cta-box h2{font-size:2rem;margin-bottom:12px;color:var(--pink-deep);}
+  .cta-box p{margin-bottom:26px;color:#4a2f10;font-size:1rem;}
+
+  /* ===== FOOTER ===== */
+  footer{
+    background:var(--ink);color:var(--cream);
+    padding:36px 0 24px;
+  }
+  .footer-inner{
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;
+  }
+  .footer-brand{
+    font-family:'Baloo 2',cursive;font-weight:800;font-size:1.2rem;color:var(--pink-line);
+  }
+  .footer-info{font-size:.85rem;color:#c9b3bf;line-height:1.6;}
+  .footer-bottom{
+    margin-top:24px;border-top:1px solid #4a2f3b;padding-top:16px;
+    text-align:center;font-size:.78rem;color:#8a6b74;
+  }
+
+  /* ===== WHATSAPP FLOAT ===== */
+  .wa-float{
+    position:fixed;bottom:22px;right:22px;z-index:60;
+    background:var(--lime);
+    width:58px;height:58px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    border:3px solid var(--ink);
+    font-size:1.6rem;
+    box-shadow:3px 3px 0 var(--ink);
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width:860px){
+    .hero-inner{grid-template-columns:1fr;text-align:center;}
+    .hero p{margin-left:auto;margin-right:auto;}
+    .btn-row,.hero-badges{justify-content:center;}
+    .hero h1{font-size:2.4rem;}
+    .menu-grid{grid-template-columns:repeat(2,1fr);}
+    .testi-grid{grid-template-columns:1fr;}
+    .strip-inner{justify-content:center;text-align:center;}
+    .footer-inner{flex-direction:column;text-align:center;}
+  }
+  @media (max-width:480px){
+    .menu-grid{grid-template-columns:1fr;}
+    .hero h1{font-size:2rem;}
+    .coconut-plate{max-width:260px;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{transition:none !important;}
+  }
+
+  /* ===== ACCESSIBILITY & POLISH ===== */
+  section, header.hero{scroll-margin-top:74px;}
+  a:focus-visible, .btn:focus-visible, .nav-cta:focus-visible, .wa-float:focus-visible{
+    outline:3px solid var(--ink);
+    outline-offset:3px;
+  }
+  .nav-cta{transition:transform .15s ease, background .15s ease;}
+  .nav-cta:hover{transform:translateY(-2px);}
+  .brand{transition:transform .15s ease;}
+  .btn-secondary:hover{background:rgba(43,18,32,.06);}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="brand">
+      <span class="brand-mark">
+        <!-- Ganti src di bawah ini dengan link/file logo kamu -->
+        <img class="brand-mark-img" src="logodo.jpg" alt="Logo Degan Ori">
+      </span>
+      Degan Ori
+    </div>
+    <a href="#menu" class="nav-cta">Pesan Sekarang</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-inner">
+    <div class="hero-text">
+      <span class="eyebrow">ASLI JOMBANG</span>
+      <h1>Degan Seger,<br><span>Tanpa Gula Buatan.</span></h1>
+      <p>Kelapa muda pilihan, diracik segar setiap hari. Manisnya alami, tanpa pengawet, langsung dari Degan Ori.</p>
+      <div class="btn-row">
+        <a href="#pesan" class="btn btn-primary">🛵 Order via WhatsApp</a>
+        <a href="#menu" class="btn btn-secondary">Lihat Menu</a>
+      </div>
+      <div class="hero-badges">
+        <span class="badge-pill">✅ Tanpa Pengawet</span>
+        <span class="badge-pill">🥥 Kelapa Muda Pilihan</span>
+        <span class="badge-pill">🔒 Halal</span>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="coconut-plate">
+        <!-- Ganti src di bawah ini dengan link/file foto kelapa/produk kamu -->
+        <img class="coconut-img" src="deganori.png" alt="Degan Ori">
+        <span class="float-chip chip1">🍋</span>
+        <span class="float-chip chip2">🍃</span>
+        <span class="float-chip chip3">✨</span>
+      </div>
+    </div>
+  </div>
+
+  <svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none" style="height:70px;">
+    <path fill="#2B1220" d="M0,40 C300,90 700,0 1000,40 C1200,65 1350,55 1440,30 L1440,90 L0,90 Z"></path>
+    <path fill="#FFC61E" d="M0,55 C300,95 700,25 1000,55 C1200,75 1350,68 1440,48 L1440,90 L0,90 Z"></path>
+  </svg>
+</header>
+
+<div class="strip">
+  <div class="strip-inner">
+    <div class="strip-item"><span class="ic">🥥</span>100% Degan Asli</div>
+    <div class="strip-item"><span class="ic">🚫</span>Tanpa Pengawet</div>
+    <div class="strip-item"><span class="ic">✅</span>Halal &amp; Higienis</div>
+    <div class="strip-item"><span class="ic">📍</span>Order Khusus Jombang</div>
+  </div>
+</div>
+
+<section class="section" id="menu">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">MENU KAMI</span>
+      <h2>4 Pilihan Seger</h2>
+    </div>
+    <p class="menu-hint">👉 Klik menu untuk pesan lewat WhatsApp</p>
+    <div class="menu-grid">
+      <a class="menu-card" href="https://wa.me/6282326965427?text=Halo%20Degan%20Ori%2C%20saya%20mau%20pesan%20Degan%20Ori%20😊" aria-label="Pesan Degan Ori via WhatsApp">
+        <div class="menu-icon"><img src="menu-degan-ori.jpg" alt="Degan Ori"></div>
+        <h3>Degan Ori</h3>
+        <p>Air kelapa muda asli, manis alami tanpa gula buatan. Yang paling murni, paling seger.</p>
+        <span class="menu-tag">🚫 Tanpa gula buatan</span>
+      </a>
+      <a class="menu-card" href="https://wa.me/6282326965427?text=Halo%20Degan%20Ori%2C%20saya%20mau%20pesan%20Degan%20Buah%20😊" aria-label="Pesan Degan Buah via WhatsApp">
+        <div class="menu-icon"><img src="menu-degan-buah.png" alt="Degan Buah"></div>
+        <h3>Degan Buah</h3>
+        <p>Degan dipadu potongan buah segar. Manis, asem, seger jadi satu gelas.</p>
+        <span class="menu-tag">🍇 Full buah asli</span>
+      </a>
+      <a class="menu-card" href="https://wa.me/6282326965427?text=Halo%20Degan%20Ori%2C%20saya%20mau%20pesan%20Degan%20Jelly%20😊" aria-label="Pesan Degan Jelly via WhatsApp">
+        <div class="menu-icon"><img src="menu-degan-jelly.jpg" alt="Degan Jelly"></div>
+        <h3>Degan Jelly</h3>
+        <p>Olahan degan yang dibikin jelly kenyal. Beda sensasi, tetap rasa kelapa asli.</p>
+        <span class="menu-tag">✨ Tekstur unik</span>
+      </a>
+      <a class="menu-card" href="https://wa.me/6282326965427?text=Halo%20Degan%20Ori%2C%20saya%20mau%20pesan%20Jelly%20Degan%20Buah%20😊" aria-label="Pesan Jelly Degan Buah via WhatsApp">
+        <div class="menu-icon"><img src="menu-degan-jelly-buah.jpg" alt="Jelly Degan Buah"></div>
+        <h3>Degan Jelly Buah</h3>
+        <p>Jelly degan dicampur buah pilihan. Kenyal, seger, dan penuh rasa buah.</p>
+        <span class="menu-tag">🥭 Kombinasi favorit</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="testi-section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">KATA PELANGGAN</span>
+      <h2>Sudah Coba, Langsung Cinta</h2>
+      <p>Testimoni asli dari warga Jombang yang udah langganan Degan Ori.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">Degannya beneran fresh, ga kemanisan kayak yang lain. Sekali coba langsung repeat order.</p>
+        <div class="testi-person">
+          <div class="testi-avatar">R</div>
+          <div>
+            <div class="testi-name">Rina</div>
+            <div class="testi-loc">Jombang Kota</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">Jelly degannya unik banget, anak-anak di rumah suka semua. Sekarang jadi jajanan wajib tiap minggu.</p>
+        <div class="testi-person">
+          <div class="testi-avatar">B</div>
+          <div>
+            <div class="testi-name">Budi S.</div>
+            <div class="testi-loc">Peterongan</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">Order gampang tinggal chat WA, dianter cepet. Degan buahnya seger, cocok buat cuaca panas.</p>
+        <div class="testi-person">
+          <div class="testi-avatar">D</div>
+          <div>
+            <div class="testi-name">Dewi A.</div>
+            <div class="testi-loc">Mojoagung</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" id="pesan">
+  <div class="wrap">
+    <div class="cta-box">
+      <h2>Mau Degan Sekarang?</h2>
+      <p>Chat langsung, pesan diproses cepat. Khusus wilayah Jombang.</p>
+      <a href="https://wa.me/6281234567890?text=Halo%20Degan%20Ori%2C%20saya%20mau%20pesan" class="btn btn-primary" style="background:var(--ink);color:var(--yellow);box-shadow:4px 4px 0 var(--pink-deep);">💬 Chat WhatsApp Sekarang</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-inner">
+    <div>
+      <div class="footer-brand">🥥 Degan Ori</div>
+      <div class="footer-info">Kesegaran Kelapa Asli</div>
+    </div>
+    <div class="footer-info">
+      📍 Melayani area Jombang &amp; sekitarnya<br>
+      📱 WhatsApp: 0812-3456-7890<br>
+      🕒 Buka setiap hari 09.00 – 21.00
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 Degan Ori. Halal &amp; Asli Indonesia.</div>
+</footer>
+
+<a href="https://wa.me/6282326965427?text=Halo%20Degan%20Ori%2C%20saya%20mau%20pesan" class="wa-float" aria-label="Chat WhatsApp">💬</a>
+
+</body>
+</html>
